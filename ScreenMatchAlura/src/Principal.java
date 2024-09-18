@@ -53,8 +53,8 @@ public class Principal {
         filtro.filtra(episodio);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
-        listaDeFilmes.add(favorito);
-        listaDeFilmes.add(outro);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
 
         System.out.println(“Tamanho da lista: “ +listaDeFilmes.size());
         System.out.println(“Primeiro Filme: “ +listaDeFilmes.get(0));
