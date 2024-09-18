@@ -52,6 +52,13 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(favorito);
+        listaDeFilmes.add(outro);
+
+        System.out.println(“Tamanho da lista: “ +listaDeFilmes.size());
+        System.out.println(“Primeiro Filme: “ +listaDeFilmes.get(0));
+        System.out.println(listaDeFilmes);
 
     }
 }
