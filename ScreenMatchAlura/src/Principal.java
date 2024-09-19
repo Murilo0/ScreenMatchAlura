@@ -1,14 +1,15 @@
 package ScreenMatchAlura.src;
 
+import java.util.ArrayList;
+
 import ScreenMatchAlura.src.br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import ScreenMatchAlura.src.br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import ScreenMatchAlura.src.br.com.alura.screenmatch.modelos.*;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O Poderoso Chefão" , 1970);
+        meuFilme.setDiretor("Quentin Tarantino");
         meuFilme.setDuracaoEmMinutos(180);
 
 
@@ -20,19 +21,14 @@ public class Principal {
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println("Média de notas: " + (int)meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost" , 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
 
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        Filme outroFilme = new Filme("Avatar", 2023);
         outroFilme.setDuracaoEmMinutos(200);
 
         System.out.println("Duração para maratonar:" + lost.getDuracaoEmMinutos());
@@ -41,8 +37,7 @@ public class Principal {
         calculadora.inclui(meuFilme);
         calculadora.inclui(outroFilme);
         calculadora.inclui(lost);
-        System.out.println(calculadora.getTempoTotal());
-
+        System.out.println("Para assistir todo nosso catálogo de filmes e séries você gastaria: " + calculadora.getTempoTotal() + " minutos");
         FiltroRecomendacao filtro = new FiltroRecomendacao();
 
         filtro.filtra(meuFilme);
@@ -56,9 +51,9 @@ public class Principal {
         listaDeFilmes.add(meuFilme);
         listaDeFilmes.add(outroFilme);
 
-        System.out.println(“Tamanho da lista: “ +listaDeFilmes.size());
-        System.out.println(“Primeiro Filme: “ +listaDeFilmes.get(0));
-        System.out.println(listaDeFilmes);
 
+        System.out.println("Quantos filmes temos catalogados? " + listaDeFilmes.size() + " filmes");
+        System.out.println("Primeiro filme catalogado: " + listaDeFilmes.getFirst());
+        System.out.println("Toda a lista de catalogados: " + listaDeFilmes);
     }
 }
