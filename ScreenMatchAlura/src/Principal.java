@@ -10,7 +10,6 @@ public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme("O Poderoso Chefão" , 1970, 180);
         meuFilme.setDiretor("Quentin Tarantino");
-
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
         meuFilme.avalia(5);
@@ -18,6 +17,8 @@ public class Principal {
         meuFilme.avalia(9);
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println("Média de notas: " + meuFilme.getClassificacao());
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
 
         Serie lost = new Serie("Lost" , 2000);
         lost.exibeFichaTecnica();
@@ -33,13 +34,12 @@ public class Principal {
         calculadora.inclui(outroFilme);
         calculadora.inclui(lost);
         System.out.println("Para assistir todo nosso catálogo de filmes e séries você gastaria: " + calculadora.getTempoTotal() + " minutos");
-        FiltroRecomendacao filtro = new FiltroRecomendacao();
 
-        filtro.filtra(meuFilme);
         Episodio episodio = new Episodio();
         episodio.setNumero(1);
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
+        System.out.println("O epísódio " + episodio.getNumero() + " da série " + episodio.getSerie() + " com " + episodio.getTotalVisualizacoes() + " visualizações");
         filtro.filtra(episodio);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
