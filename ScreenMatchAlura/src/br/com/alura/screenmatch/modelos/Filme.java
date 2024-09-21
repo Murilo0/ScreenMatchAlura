@@ -1,12 +1,17 @@
 package ScreenMatchAlura.src.br.com.alura.screenmatch.modelos;
 
 import ScreenMatchAlura.src.br.com.alura.screenmatch.calculos.Classificavel;
+import ScreenMatchAlura.src.br.com.alura.screenmatch.modelos.Titulo;
 
 public class Filme extends Titulo implements Classificavel {
     private String diretor;
+    private String nome;
+    private int anoDeLancamento;
+    private int duracaoMin;
 
-    public Filme(String nome , int anoDeLancamento){
+    public Filme(String nome , int anoDeLancamento, int duracaoMin){
         super(nome, anoDeLancamento);
+        this.setDuracaoEmMinutos(duracaoMin);
     }
     
     public String getDiretor() {
@@ -18,7 +23,7 @@ public class Filme extends Titulo implements Classificavel {
     }
 
     @Override
-    public int GetClassificacao() {
+    public int getClassificacao() {
         return (int) pegaMedia() / 2 ;
     }
 

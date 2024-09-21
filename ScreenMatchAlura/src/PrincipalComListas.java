@@ -5,14 +5,15 @@ import ScreenMatchAlura.src.br.com.alura.screenmatch.modelos.Serie;
 import ScreenMatchAlura.src.br.com.alura.screenmatch.modelos.Titulo;
 import ScreenMatchAlura.src.br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 
+
 import java.util.ArrayList;
 
 public class PrincipalComListas{
     public static void main(String[] args) {
 
-        Filme meuFilme = new Filme("O Poderoso Chefão" , 1970);
+        Filme meuFilme = new Filme("O Poderoso Chefão" , 1970, 180);
         Serie lost = new Serie("Lost" , 2000);
-        Filme outroFilme = new Filme("Avatar", 2023);
+        Filme outroFilme = new Filme("Avatar", 2023, 200);
 
         ArrayList<Titulo> listaTitulos = new ArrayList<>();
         listaTitulos.add(meuFilme);
@@ -20,6 +21,8 @@ public class PrincipalComListas{
         listaTitulos.add(lost);
         for(Titulo item: listaTitulos){
             System.out.println(item);
+            Filme filme = (Filme) item;
+            System.out.println("Classificação: " + filme.getClassificacao());
         }
     }
 }

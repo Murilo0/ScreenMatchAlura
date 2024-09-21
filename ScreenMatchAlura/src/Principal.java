@@ -8,10 +8,8 @@ import ScreenMatchAlura.src.br.com.alura.screenmatch.modelos.*;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme("O Poderoso Chefão" , 1970);
+        Filme meuFilme = new Filme("O Poderoso Chefão" , 1970, 180);
         meuFilme.setDiretor("Quentin Tarantino");
-        meuFilme.setDuracaoEmMinutos(180);
-
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
@@ -19,19 +17,16 @@ public class Principal {
         meuFilme.avalia(10);
         meuFilme.avalia(9);
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
-        System.out.println("Média de notas: " + (int)meuFilme.pegaMedia());
+        System.out.println("Média de notas: " + meuFilme.getClassificacao());
 
         Serie lost = new Serie("Lost" , 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
-
-
-        Filme outroFilme = new Filme("Avatar", 2023);
-        outroFilme.setDuracaoEmMinutos(200);
-
         System.out.println("Duração para maratonar:" + lost.getDuracaoEmMinutos());
+
+        Filme outroFilme = new Filme("Avatar", 2023 , 200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(meuFilme);
@@ -53,7 +48,7 @@ public class Principal {
 
 
         System.out.println("Quantos filmes temos catalogados? " + listaDeFilmes.size() + " filmes");
-        System.out.println("Primeiro filme catalogado: " + listaDeFilmes.getFirst());
+        System.out.println("Primeiro filme catalogado: " + listaDeFilmes.get(0));
         System.out.println("Toda a lista de catalogados: " + listaDeFilmes);
     }
 }

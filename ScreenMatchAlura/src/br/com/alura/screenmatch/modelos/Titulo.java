@@ -1,6 +1,6 @@
 package ScreenMatchAlura.src.br.com.alura.screenmatch.modelos;
 
-public class Titulo {
+public abstract class Titulo {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
