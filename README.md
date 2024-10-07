@@ -1,5 +1,5 @@
 # ScreenMatchAlura
 
-Projeto de estudo pessoal da plataforma Alura de ensino.
+Projeto de estudo pessoal.
 
-Este projeto não é autoral, é apenas um objeto de estudo feito com auxílio dos instrutores ao longo da formação Java.
+Este projeto é apenas um objeto de estudo feito por mim com base no projeto ScreenMatch da formação Java da empresa Alura.
