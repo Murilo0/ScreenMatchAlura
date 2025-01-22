@@ -1,6 +1,6 @@
 package ScreenMatchAlura.src.br.com.alura.screenmatch.modelos;
 
-public abstract class Titulo {
+public abstract class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
@@ -62,5 +62,10 @@ public abstract class Titulo {
 
     public double pegaMedia(){
         return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo){
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }

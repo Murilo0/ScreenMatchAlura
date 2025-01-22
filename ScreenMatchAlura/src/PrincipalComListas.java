@@ -8,6 +8,7 @@ import ScreenMatchAlura.src.br.com.alura.screenmatch.calculos.CalculadoraDeTempo
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas{
     public static void main(String[] args) {
@@ -36,6 +37,11 @@ public class PrincipalComListas{
         buscaPorArtista.add("Jacqueline");
         Collections.sort(buscaPorArtista);
         System.out.println(buscaPorArtista);
+        System.out.println("Lista de títulos ordenados:");
+        Collections.sort(listaTitulos);
+        System.out.println(listaTitulos);
+        listaTitulos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Depois de compararar por ano de lançcamento: " + listaTitulos);
     }
 }
 
