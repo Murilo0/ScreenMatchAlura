@@ -47,7 +47,7 @@ public class Principal {
         listaDeFilmes.add(outroFilme);
 
         System.out.println("Quantos filmes temos catalogados? " + listaDeFilmes.size() + " filmes");
-        System.out.println("Primeiro filme catalogado: " + listaDeFilmes.get(0));
+        System.out.println("Primeiro filme catalogado: " + listaDeFilmes.getFirst());
         System.out.println("Toda a lista de catalogados: " + listaDeFilmes);
     }
 }
