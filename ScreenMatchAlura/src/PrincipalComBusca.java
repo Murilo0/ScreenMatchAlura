@@ -20,7 +20,7 @@ public class PrincipalComBusca {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
         var input = "";
-
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).setPrettyPrinting().create();
         List<Titulo> titulos = new ArrayList<>();
 
         while (!input.equalsIgnoreCase("sair")) {
@@ -42,8 +42,6 @@ public class PrincipalComBusca {
 
                 String json = response.body();
                 System.out.println(json);
-
-                Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
                 TItuloOmdb meuTituloOmdb = gson.fromJson(json, TItuloOmdb.class);
 
                 Titulo meuTitulo = new Titulo(meuTituloOmdb);
@@ -56,6 +54,9 @@ public class PrincipalComBusca {
                 System.out.println("Aconteceu um erro: ");
                 System.out.println(e.getMessage());
             }
+            FileWriter escrita = new FileWriter("filmes.json");
+            escrita.write(gson.toJson(titulos));
+            escrita.close();
             System.out.println(titulos);
             System.out.println("O programa rodou corretamente.");
         }
